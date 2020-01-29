@@ -30,22 +30,20 @@ let BookmarkList = {
 		let idToUpdate = {
 			id
 		}
-		let updatedObject = Bookmark.find(idToUpdate)
-		.then((obj) =>{
-			return obj;
-		})
-		if(titulo!=""){
+		let updatedObject = {
+			id
+		}
+		if(titulo){
 			updatedObject.titulo = titulo;
 		}
-		if(descripcion!=""){
+		if(descripcion){
 			updatedObject.descripcion = descripcion;
 		}
-		if(url!=""){
+		if(url){
 			updatedObject.url = url;
 		}
 		Bookmark.updateOne(idToUpdate, updatedObject)
 		.then((response)=>{
-			console.log(updatedObject);
 			return updatedObject;
 		})
 		.catch((err)=>{
