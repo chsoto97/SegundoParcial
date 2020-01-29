@@ -22,7 +22,7 @@ app.put('/api/bookmarks/:id', jsonParser, (req, res) =>{
 		res.statusMessage = "No se proporcionan datos para actualizar.";
 		res.status(406).send();
 	}
-	BookmarkList.update(req.body.titulo, req.body.id, req.body.descripcion, req.body.url)
+	BookmarkList.updateBookmark(req.body.titulo, req.body.id, req.body.descripcion, req.body.url)
 	.then((updatedBookmark)=>{
 		if(updatedBookmark){
 			return res.status(202).json(updatedBookmark);

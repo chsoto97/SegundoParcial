@@ -26,7 +26,7 @@ let bookmarkCollection = mongoose.Schema({
 let Bookmark = mongoose.model('bookmarks', bookmarkCollection);
 
 let BookmarkList = {
-	update : function(titulo, id, descripcion, url){
+	updateBookmark : function(titulo, id, descripcion, url){
 		let idToUpdate = {
 			id
 		}
